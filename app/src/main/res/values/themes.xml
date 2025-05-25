@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Tema base do aplicativo -->
+    <style name="AppTheme.Base" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Cores primárias -->
+        <item name="colorPrimary">@color/md_theme_primary</item>
+        <item name="colorOnPrimary">@color/md_theme_onPrimary</item>
+        <item name="colorPrimaryContainer">@color/md_theme_primaryContainer</item>
+        <item name="colorOnPrimaryContainer">@color/md_theme_onPrimaryContainer</item>
+
+        <!-- Cores secundárias -->
+        <item name="colorSecondary">@color/md_theme_secondary</item>
+        <item name="colorOnSecondary">@color/md_theme_onSecondary</item>
+        <item name="colorSecondaryContainer">@color/md_theme_secondaryContainer</item>
+        <item name="colorOnSecondaryContainer">@color/md_theme_onSecondaryContainer</item>
+
+        <!-- Cor de erro -->
+        <item name="colorError">@color/md_theme_error</item>
+        <item name="colorOnError">@color/md_theme_onError</item>
+
+        <!-- Cores de fundo e superfície -->
+        <item name="android:colorBackground">@color/md_theme_background</item>
+        <item name="colorOnBackground">@color/md_theme_onBackground</item>
+        <item name="colorSurface">@color/md_theme_surface</item>
+        <item name="colorOnSurface">@color/md_theme_onSurface</item>
+
+        <!-- Status bar color (opcional, pode ser a mesma que a primary ou primaryDark) -->
+        <item name="android:statusBarColor">?attr/colorPrimary</item>
+        <!-- Navigation bar color (opcional) -->
+        <!-- <item name="android:navigationBarColor">?attr/colorPrimary</item> -->
+
+        <!-- Estilos para componentes específicos (opcional, mas recomendado) -->
+        <item name="toolbarStyle">@style/Widget.App.Toolbar</item>
+        <item name="materialButtonStyle">@style/Widget.App.Button</item>
+        <item name="radioButtonStyle">@style/Widget.App.RadioButton</item>
+        <item name="android:textViewStyle">@style/Widget.App.TextView</item>
+    </style>
+
+    <!-- Tema principal do aplicativo, que herda do tema base -->
+    <style name="AppTheme" parent="AppTheme.Base" />
+
+    <!-- Estilos específicos para widgets (exemplo) -->
+    <style name="Widget.App.Toolbar" parent="Widget.Material3.Toolbar.PrimarySurface">
+        <item name="android:background">?attr/colorPrimary</item>
+        <item name="titleTextColor">?attr/colorOnPrimary</item>
+        <item name="subtitleTextColor">?attr/colorOnPrimary</item>
+    </style>
+
+    <style name="Widget.App.Button" parent="Widget.Material3.Button">
+        <item name="android:backgroundTint">?attr/colorSecondary</item>
+        <item name="android:textColor">?attr/colorOnSecondary</item>
+        <item name="android:paddingLeft">24dp</item>
+        <item name="android:paddingRight">24dp</item>
+    </style>
+
+    <style name="Widget.App.RadioButton" parent="Widget.Material3.CompoundButton.RadioButton">
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="buttonTint">@color/radio_button_tint_selector</item> <!-- Veja abaixo -->
+    </style>
+
+    <style name="Widget.App.TextView" parent="Widget.Material3.TextView">
+        <item name="android:textColor">?attr/colorOnBackground</item>
+    </style>
+
+</resources>

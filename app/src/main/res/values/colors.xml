@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Cores primárias do aplicativo (exemplo) -->
+    <color name="md_theme_primary">#3F51B5</color> <!-- Um azul índigo como cor primária -->
+    <color name="md_theme_onPrimary">#FFFFFF</color> <!-- Cor do texto/ícones sobre a cor primária -->
+    <color name="md_theme_primaryContainer">#C5CAE9</color> <!-- Um tom mais claro da cor primária -->
+    <color name="md_theme_onPrimaryContainer">#1F255C</color> <!-- Cor do texto/ícones sobre o container primário -->
+
+    <!-- Cores secundárias do aplicativo (exemplo) -->
+    <color name="md_theme_secondary">#FF4081</color> <!-- Um rosa como cor secundária (para botões de ação, etc.) -->
+    <color name="md_theme_onSecondary">#FFFFFF</color>
+    <color name="md_theme_secondaryContainer">#FFC1D7</color>
+    <color name="md_theme_onSecondaryContainer">#5A122C</color>
+
+    <!-- Outras cores -->
+    <color name="md_theme_error">#B00020</color>
+    <color name="md_theme_onError">#FFFFFF</color>
+    <color name="md_theme_background">#F5F5F5</color> <!-- Cor de fundo do app -->
+    <color name="md_theme_onBackground">#1C1B1F</color> <!-- Cor do texto sobre o fundo -->
+    <color name="md_theme_surface">#FFFFFF</color> <!-- Cor de superfícies como cards, dialogs -->
+    <color name="md_theme_onSurface">#1C1B1F</color>
+
+    <!-- Cores específicas para os RadioButtons (opcional, para mais controle) -->
+    <color name="radio_button_selected_color">@color/md_theme_primary</color>
+    <color name="radio_button_unselected_color">@color/md_theme_onSurface</color> <!-- Ou uma cor cinza -->
+</resources>

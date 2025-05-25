@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/alarme_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2C2C2C"
+    android:keepScreenOn="true"
+    tools:context="activities.AlarmeActivity"> <!-- Substitua .AlarmeActivity pelo nome da sua Activity -->
+
+    <TextView
+        android:id="@+id/textViewAlarmeMensagem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PEÇA NÃO CONFORME\nDETECTADA"
+        android:textSize="34sp"
+        android:textColor="#FF0000"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:padding="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/buttonPararAlarme"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"/>
+
+    <Button
+        android:id="@+id/buttonPararAlarme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Parar Alarme"
+        android:textSize="20sp"
+        android:paddingStart="32dp"
+        android:paddingEnd="32dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAlarmeMensagem"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
