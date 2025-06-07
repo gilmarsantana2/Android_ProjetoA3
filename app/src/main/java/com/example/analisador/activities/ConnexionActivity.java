@@ -1,20 +1,17 @@
-package activities;
+package com.example.analisador.activities;
 
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
@@ -45,7 +42,7 @@ public class ConnexionActivity extends AppCompatActivity {
         txtConexao = findViewById(R.id.txtConexao);
         btnConectar = findViewById(R.id.btnConectar);
         editEndereco = findViewById(R.id.editEndereco);
-        editEndereco.setText("192.168.1.40");
+        editEndereco.setText("192.168.0.100");
         carregarPermissoes();
 
         btnConectar.setOnClickListener(v -> {

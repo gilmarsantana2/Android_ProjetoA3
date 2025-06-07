@@ -2,20 +2,20 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:keepScreenOn="true"
-    android:id="@+id/main"
-    tools:context="activities.MainActivity">
+    tools:context=".activities.MainActivity">
 
     <!-- Menu (Toolbar) -->
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/topAppBar"
@@ -35,19 +35,19 @@
         android:id="@+id/radioGroupCores"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:gravity="center_horizontal"
+        android:orientation="horizontal"
         android:padding="16dp"
-        app:layout_constraintTop_toBottomOf="@id/appBarLayout"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout">
 
         <RadioButton
             android:id="@+id/radioAzul"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Azul"
-            android:checked="true"/> <!-- Marcado por padrão -->
+            android:checked="true"
+            android:text="Azul" /> <!-- Marcado por padrão -->
 
         <RadioButton
             android:id="@+id/radioVerde"
@@ -64,7 +64,7 @@
             android:text="Vermelho" />
     </RadioGroup>
 
-    <!-- Caixa de Texto para informações recebidas -->
+    <!-- Caixa de Texto para informações recebidas
     <TextView
         android:id="@+id/textViewInformacoes"
         android:layout_width="0dp"
@@ -75,20 +75,162 @@
         android:padding="8dp"
         android:text="Aguardando leitura dos Sensores..."
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        app:layout_constraintTop_toBottomOf="@id/radioGroupCores"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@id/buttonScanear"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/radioGroupCores" />
+        -->
 
     <!-- Botão de Scanear -->
     <Button
         android:id="@+id/buttonScanear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Scanear"
         android:layout_marginBottom="16dp"
+        android:text="Scanear"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/layout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+
+        android:layout_margin="16dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/buttonScanear"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupCores">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="Cor Selecionada:"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/txtCorSelecionada"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="Peças Vermelhas Selecionadas:"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/txtRed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="Peças Verdes Selecionadas:"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/txtGreen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="Peças Azuis Selecionadas:"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/txtBlue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtWaiting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:text="Aguardando \nInformações do \nSeletor"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupCores" />
+
+    <Button
+        android:id="@+id/btnResetar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Resetar Dados"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/buttonScanear"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtWaiting" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -40,7 +40,7 @@
     <style name="AppTheme" parent="AppTheme.Base" />
 
     <!-- Estilos específicos para widgets (exemplo) -->
-    <style name="Widget.App.Toolbar" parent="Widget.Material3.Toolbar.PrimarySurface">
+    <style name="Widget.App.Toolbar" parent="Widget.Material3.Search.Toolbar.Button.Navigation">
         <item name="android:background">?attr/colorPrimary</item>
         <item name="titleTextColor">?attr/colorOnPrimary</item>
         <item name="subtitleTextColor">?attr/colorOnPrimary</item>
@@ -58,7 +58,7 @@
         <item name="buttonTint">@color/radio_button_tint_selector</item> <!-- Veja abaixo -->
     </style>
 
-    <style name="Widget.App.TextView" parent="Widget.Material3.TextView">
+    <style name="Widget.App.TextView" parent="Widget.AppCompat.TextView">
         <item name="android:textColor">?attr/colorOnBackground</item>
     </style>
 

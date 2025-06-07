@@ -1,4 +1,4 @@
-package activities;
+package com.example.analisador.activities;
 
 import android.content.Context;
 import android.os.Bundle;

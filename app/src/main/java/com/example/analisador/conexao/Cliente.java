@@ -8,6 +8,8 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.util.concurrent.atomic.AtomicReference;
 
+import data.MessageData;
+
 public class Cliente extends Thread {
 
     private final String TAG = "Cliente";
@@ -41,15 +43,12 @@ public class Cliente extends Thread {
         }
     }
 
-
-    public boolean enviarMSG(String mensagem) {
+    public boolean enviarMSG(MessageData mensagem) {
         if (connected) {
             new Thread(() -> {
                 try {
-                    //output = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
-                    this.output.writeObject(mensagem);
+                    this.output.writeUnshared(mensagem);
                     this.output.flush();
-                    //output.close();
                 } catch (IOException e) {
                     Log.e(TAG, "Não foi possível Enviar mensagem ao servidor");
                 }
@@ -61,17 +60,20 @@ public class Cliente extends Thread {
         }
     }
 
-    public synchronized String lerMSG() {
+    public synchronized MessageData lerMSG() {
         if (connected) {
-            String msg = null;
+            MessageData data = null;
             try {
-                msg = (String) this.input.readObject();
+                data = (MessageData) input.readUnshared();
+                Log.d("Mensagem", data.toString());
+                return data;
             } catch (IOException e) {
-                Log.e(TAG, "Não foi possivel ler mensagem do servidor", e);
+                //Log.e("Mensagem", "Não foi possível receber mensagem do servidor " + e.getMessage());
+                return null;
+
             } catch (ClassNotFoundException e) {
                 throw new RuntimeException(e);
             }
-            return msg;
         } else {
             Log.e(TAG, "Erro de conexão com o servidor");
             return null;
